@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 ForwardMove = -transform.forward * speed * Time.fixedDeltaTime;
         Vector3 horizontalMove = -transform.right * horizontalImput * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + ForwardMove + horizontalMove);
+        rb.velocity =  ForwardMove + horizontalMove;
         
     }
 
