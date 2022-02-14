@@ -14,7 +14,16 @@ public class BoxFollow : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit Hit;
+        if(Physics.Raycast (transform.position, transform.TransformDirection (Vector3.right), out RaycastHit hitinfoR,2))
+        {
+            Debug.Log("Hit");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * hitinfoR.distance, Color.red);
+        }
+        else if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.right), out RaycastHit hitinfoL, 2))
+        {
+            Debug.Log("Hit");
+            Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.right) * hitinfoR.distance, Color.red);
+        }
         
     }
 }
