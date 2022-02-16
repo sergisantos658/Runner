@@ -9,21 +9,31 @@ public class BoxFollow : MonoBehaviour
     public float numofRays = 17;
     public float speed = 4;
     public int randomNum = 0;
-    public GameObject follow;
+    public Transform follow;
     public bool colision = false;
+
+    public bool isFollowing => follow != null;
+
     private void OnTriggerExit(Collider other)
     {
-        randomNum = Random.Range(0, 2);
-        //transform.SetParent(other.transform);
-        PlayerFollowers.current.AddFollower(gameObject);
-        colision = true;
-        
+
+        if(other.CompareTag("Player") && !isFollowing)
+        {
+
+            randomNum = Random.Range(0, 2);
+            //transform.SetParent(other.transform);
+            PlayerFollowers.current.AddFollower(transform);
+            colision = true;
+            
+        }
+
     }
 
 
 
     private void Update()
     {
+
         /*if(Physics.Raycast (transform.position, transform.TransformDirection (Vector3.right), out RaycastHit hitinfoR,2))
         {
             //Debug.Log("Hit");
@@ -38,14 +48,18 @@ public class BoxFollow : MonoBehaviour
         {
             float dist =
         }*/
-        if(colision == true)
+
+        if(follow != null)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, follow.transform.position, (speed + randomNum) * Time.deltaTime);
-            transform.rotation = follow.transform.rotation;
+
+            if(colision == true)
+            {
+                transform.localPosition = Vector3.Slerp(transform.localPosition, follow.position, (speed + randomNum) * Time.deltaTime);
+                transform.rotation = follow.rotation;
+            }
+
         }
 
-
-        
         
     }
 }
