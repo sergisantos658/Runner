@@ -3,7 +3,57 @@ guid: 7b2ebd47c9619d7438d2b56a661f9e22
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CAM
+    second: {fileID: 2100000, guid: a651fae713ce7dc4291cd0984dda404d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ev1_1
+    second: {fileID: 2100000, guid: 18df68c0ab308bd4297a54c75bc517f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ev1_2
+    second: {fileID: 2100000, guid: a3894004dcaf9a9438c2938f3dc11f5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ev1_3
+    second: {fileID: 2100000, guid: 4b8de3184f250af409e625eaf432997e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ev1_4
+    second: {fileID: 2100000, guid: 70168fa268a35fc46890fc357eeab152, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ev1_5
+    second: {fileID: 2100000, guid: dfbcb51b54e8e2e449f31608ab8a4523, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ev_6
+    second: {fileID: 2100000, guid: c091e0f2559b2ed4cb704e8cc7565843, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: f1b72ce37d0577d4ab407962bcdaca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 04d639f124484684aac2056cf9555839, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert41
+    second: {fileID: 2100000, guid: 7f025999626267d42805fe9070194f13, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -85,7 +135,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.29
+    globalScale: 29
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

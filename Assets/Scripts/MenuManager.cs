@@ -7,13 +7,12 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-	bool pause;
 
-	public GameObject mainPauseMenu;
+	public GameObject NextMenu;
+	
 
 	List<GameObject> menus = new List<GameObject>();
 	
-	public static event Action<bool> Dialoginteractuable = delegate { };
 
 	private void OnEnable()
 	{
@@ -26,21 +25,16 @@ public class MenuManager : MonoBehaviour
 		Button.ChangeMenu -= ShowMenu;
 	}
 
-	public void ShowMenu(GameObject menu, bool IsPause)
+	public void ShowMenu(GameObject menu)
 	{
-		if (IsPause)
-		{
-			Time.timeScale = 0;
-			pause = true;
-			Dialoginteractuable(pause);
-			
-			
-		}
+		
 
 		if (menus.Count - 1 >= 0)
 		{
 			menus[menus.Count - 1].SetActive(false);
 		}
+
+		
 
 		menus.Add(menu);
 		menu.SetActive(true);
@@ -54,12 +48,11 @@ public class MenuManager : MonoBehaviour
 		if (menus.Count - 1 >= 0)
 		{
 			menus[menus.Count - 1].SetActive(true);
+			
 		}
 		else
         {
-			Time.timeScale = 1;
-			pause = false;
-			Dialoginteractuable(pause);
+			NextMenu.SetActive(true);
 		}
 	}
 
@@ -71,8 +64,7 @@ public class MenuManager : MonoBehaviour
 		{
 			if(menus.Count == 0)
             {
-				//ShowMenu(mainPauseMenu, true);
-				HideMenu();
+				ShowMenu(NextMenu);
 
 			}
 			else

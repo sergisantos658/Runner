@@ -16,14 +16,16 @@ public class BoxFollow : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("HOLA");
 
-        if(other.CompareTag("Player") && !isFollowing)
+        if (other.CompareTag("Player") && !isFollowing)
         {
 
             randomNum = Random.Range(0, 2);
             //transform.SetParent(other.transform);
             PlayerFollowers.current.AddFollower(transform);
             colision = true;
+            
             
         }
 
