@@ -6,6 +6,7 @@ public  class PlayerFollowers : Singleton<PlayerFollowers>
 {
     // Start is called before the first frame update
     List<Transform> Followers = new List<Transform>();
+    public GameObject followGod;
     public override void Awake()
     {
         base.Awake();
@@ -19,8 +20,8 @@ public  class PlayerFollowers : Singleton<PlayerFollowers>
     public void AddFollower(Transform box)
     {
         BoxFollow BoxFollow = box.GetComponent<BoxFollow>();
-        
-        if(Followers.Count == 0)
+
+        if (Followers.Count == 0)
         {
 
             Debug.Log("Starting to follow the player.");
@@ -41,5 +42,27 @@ public  class PlayerFollowers : Singleton<PlayerFollowers>
     {
         Followers.Remove(box);
         var BoxFollow = box.GetComponent<BoxFollow>();
+        Destroy(box.gameObject,.1f);
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+
+            Instantiate(followGod, transform.position, transform.rotation);
+        }
+        if(Input.GetKeyDown(KeyCode.F2))
+        {
+            if (Followers.Count > 0)
+            {
+                RemoveFollower(Followers[Followers.Count-1]);
+
+            }
+
+        }
     }
 }
+
+

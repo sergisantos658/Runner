@@ -341,7 +341,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Controls: A-D  to move the character\n\nInstructions: you have to arrive
     to the final of the level over come obstacles and caugthing boxes \r         
-    \r           to take them with you\n\n\n"
+    \r           to take them with you\n\n\nGOOD MODE:\n\tF3 for invulnerable mode\n\tF2
+    for delate box follower\n\tF3 for add box follower\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
