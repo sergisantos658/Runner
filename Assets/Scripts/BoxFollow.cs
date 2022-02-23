@@ -16,7 +16,6 @@ public class BoxFollow : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("HOLA");
 
         if (other.CompareTag("Player") && !isFollowing)
         {
