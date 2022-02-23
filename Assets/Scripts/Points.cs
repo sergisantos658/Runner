@@ -7,7 +7,7 @@ using TMPro;
 public class Points : MonoBehaviour
 {
 	[SerializeField]
-	TextMeshProUGUI textpoints;
+	TextMeshProUGUI[] textpoints;
 	// Start is called before the first frame update
 	private void OnEnable()
 	{
@@ -21,7 +21,11 @@ public class Points : MonoBehaviour
 
 	public void DownHealth(int	points)
 	{
-		textpoints.text = "Points: "+ points;
+		for(int i = 0; i < textpoints.Length; i++)
+        {
+			textpoints[i].text = "Points: " + points;
+		}
+		
 		
 	}
 }
