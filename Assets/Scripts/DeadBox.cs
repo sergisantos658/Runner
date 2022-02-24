@@ -8,8 +8,8 @@ public class DeadBox : MonoBehaviour
     public Explosion expBox;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
-        if (other.gameObject.layer != 7 && Dead.invulnerable == false)
+        Debug.Log(other + "AAAAAAAAAAAAAAAAAAA");
+        if (Dead.invulnerable == false)
         {
             Debug.Log("fuck the polise");
             expBox.explosion();

@@ -7,14 +7,25 @@ public class Dead : MonoBehaviour
 {
     public NextScreen _endscreen;
     static public bool invulnerable = false;
-    public Explosion expPlayer;
+    public Explosion exp;
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Containers") && invulnerable == false)
+        if (invulnerable == false)
         {
-            expPlayer.explosion();
-            _endscreen.EndScreen(gameObject);
+            Debug.Log("HI");
+            exp.explosion();
+            _endscreen.EndScreen(collision.gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other + "AAAAAAAAAAAAAAAAAAA");
+        if (Dead.invulnerable == false)
+        {
+            Debug.Log("fuck the polise");
+            exp.explosion();
+            Destroy(other.gameObject, .1f);
         }
     }
     private void Update()
